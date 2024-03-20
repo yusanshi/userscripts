@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         Cracking SVG Downloading
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Cracking SVG Downloading
+// @version      2024-03-20
+// @description  Cracking SVG Downloading. Click the SVG icon after login to download the SVG file for free.
 // @author       yusanshi
 // @match        https://www.flaticon.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=flaticon.com
 // @require      https://cdn.jsdelivr.net/npm/arrive@2.4.1/minified/arrive.min.js
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 (function () {
