@@ -1,22 +1,22 @@
 // ==UserScript==
 // @name         Kdocs batch download 金山文档批量下载
 // @namespace    http://tampermonkey.net/
-// @version      2024-02-24.1
+// @version      2024-03-20
 // @description  Download a directory in kdocs. 金山文档批量下载。
 // @author       yusanshi
-// @match        https://www.kdocs.cn/team/*
+// @match        https://www.kdocs.cn/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=kdocs.cn
 // @grant        none
 // @require      https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js
 // @license      MIT
 // ==/UserScript==
 
-const groupID = window.location.pathname.split('/')[2];
 let zip;
 
 async function dfs(folderID, paths) {
   // Recursively download all files in `folderID` to `paths`.
   await new Promise((r) => setTimeout(() => r(), 200));
+  const groupID = window.location.pathname.split('/')[2];
   const response = await fetch(
     `https://drive.kdocs.cn/api/v5/groups/${groupID}/files?parentid=${folderID}&count=10000000`,
     { credentials: 'include' }
